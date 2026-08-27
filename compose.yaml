@@ -29,7 +29,10 @@ services:
       test: [ CMD-SHELL, curl --fail --silent --show-error http://127.0.0.1:7990/ >/dev/null ]
       timeout: 10s
     image: ${BITBUCKET_IMAGE:-atlassian/bitbucket:9.6.4}
-    mem_limit: 4g
+    deploy:
+      ressources:
+        limits:
+          memory: 4g
     ports:
     - 127.0.0.1:${BITBUCKET_HTTP_PORT:-7990}:7990
     - 127.0.0.1:${BITBUCKET_SSH_PORT:-7999}:7999

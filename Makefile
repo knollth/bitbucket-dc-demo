@@ -5,7 +5,7 @@
 
 SHELL := /usr/bin/env bash
 
-COMPOSE := docker compose
+COMPOSE := podman compose
 ENV_FILE := .env
 
 # Pull port and base URL from .env (falling back to defaults) for the banner.
